@@ -23,5 +23,15 @@ namespace C__Final_Project_MiniMart.BUS
 
             return listLoaiSanPham; 
         }
+
+        public LoaiSanPham LayLoaiSanPhamTheoTen(string tenLoaiSanPham)
+        {
+            return loaiSanPhamDAO.LayLoaiSanPhamTheoTen(tenLoaiSanPham);
+        }
+
+        public int DemSoLoaiSanPham()
+        {
+            return loaiSanPhamDAO.DemSoLoaiSanPham();
+        }
     }
 }
