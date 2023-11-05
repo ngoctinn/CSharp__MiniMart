@@ -32,8 +32,6 @@ namespace C__Final_Project_MiniMart.DAO
             return listLoaiSanPham;
         }
 
-        //Lấy loại sản phẩm biết tên loại sản phẩm
-        //test
-        //test nhieu qua met qua
+        //Met qua nha
     }
 }
