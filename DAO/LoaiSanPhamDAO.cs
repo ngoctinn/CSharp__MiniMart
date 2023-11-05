@@ -32,6 +32,6 @@ namespace C__Final_Project_MiniMart.DAO
             return listLoaiSanPham;
         }
 
-        //Met qua nha
+        // abcd
     }
 }
