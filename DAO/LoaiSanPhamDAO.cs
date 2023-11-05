@@ -32,6 +32,15 @@ namespace C__Final_Project_MiniMart.DAO
             return listLoaiSanPham;
         }
 
-        //Met qua nha
+        public LoaiSanPham LayLoaiSanPhamTheoTenLoaiSanPham()
+        {
+            LoaiSanPham loaiSanPham = new LoaiSanPham();
+
+            string query = "SELECT * FROM LoaiSanPham WHERE trangThai = 1;";
+
+            DataTable dataTable = DbHelper.ExecuteQuery(query);
+
+            return loaiSanPham;
+        }
     }
 }
