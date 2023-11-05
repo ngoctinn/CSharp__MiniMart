@@ -42,5 +42,7 @@ namespace C__Final_Project_MiniMart.DAO
 
             return loaiSanPham;
         }
+        // abcd
+        //Met qua nha
     }
 }
