@@ -33,6 +33,7 @@ namespace C__Final_Project_MiniMart.DAO
         }
 
         //Lấy loại sản phẩm biết tên loại sản phẩm
-        //Test commit
+        //test
+        //test nhieu qua met qua
     }
 }
