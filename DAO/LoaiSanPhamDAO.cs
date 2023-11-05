@@ -32,7 +32,15 @@ namespace C__Final_Project_MiniMart.DAO
             return listLoaiSanPham;
         }
 
-        //Lấy loại sản phẩm biết tên loại sản phẩm
-        //Test commit
+        public LoaiSanPham LayLoaiSanPhamTheoTenLoaiSanPham()
+        {
+            LoaiSanPham loaiSanPham = new LoaiSanPham();
+
+            string query = "SELECT * FROM LoaiSanPham WHERE trangThai = 1;";
+
+            DataTable dataTable = DbHelper.ExecuteQuery(query);
+
+            return loaiSanPham;
+        }
     }
 }
