@@ -13,24 +13,28 @@ namespace GUI
 {
     public partial class DangNhapForm : Form
     {
+        TaiKhoanBUS taiKhoanBUS = new TaiKhoanBUS();
         public DangNhapForm()
         {
             InitializeComponent();
             CenterToScreen();
         }
 
-        private void guna2Button1_Click(object sender, EventArgs e)
+        private void dangNhapButton_Click(object sender, EventArgs e)
         {
-                TrangChuForm f = new TrangChuForm();
-                this.Hide();
-                f.ShowDialog();
-                this.Dispose();
-          
-        }
+            string tenDangNhap = tenDangNhapTextBox.Text;
+            string matKhau = matKhauTextBox.Text;
 
-        private void iconButton2_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            string message = taiKhoanBUS.KiemTraDangNhap(tenDangNhap, matKhau);
+
+            MessageBox.Show(message);
+
+            if (message.Equals("Đăng nhập thành công!"))
+            {
+                TrangChuForm trangChuForm = new TrangChuForm(tenDangNhap);
+
+                trangChuForm.ShowDialog();
+            }
         }
     }
 }

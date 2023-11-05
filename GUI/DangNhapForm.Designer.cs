@@ -28,97 +28,97 @@
         /// </summary>
         private void InitializeComponent()
         {
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges5 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges6 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges7 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            txtTenDangNhap = new Guna.UI2.WinForms.Guna2TextBox();
-            txtMatKhau = new Guna.UI2.WinForms.Guna2TextBox();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges8 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges9 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges10 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges13 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges14 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            tenDangNhapTextBox = new Guna.UI2.WinForms.Guna2TextBox();
+            matKhauTextBox = new Guna.UI2.WinForms.Guna2TextBox();
             guna2CirclePictureBox1 = new Guna.UI2.WinForms.Guna2CirclePictureBox();
-            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            dangNhapButton = new Guna.UI2.WinForms.Guna2Button();
             iconButton2 = new FontAwesome.Sharp.IconButton();
             ((System.ComponentModel.ISupportInitialize)guna2CirclePictureBox1).BeginInit();
             SuspendLayout();
             // 
-            // txtTenDangNhap
+            // tenDangNhapTextBox
             // 
-            txtTenDangNhap.CustomizableEdges = customizableEdges1;
-            txtTenDangNhap.DefaultText = "Tên đăng nhập";
-            txtTenDangNhap.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtTenDangNhap.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtTenDangNhap.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtTenDangNhap.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtTenDangNhap.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTenDangNhap.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtTenDangNhap.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTenDangNhap.Location = new Point(695, 220);
-            txtTenDangNhap.Name = "txtTenDangNhap";
-            txtTenDangNhap.PasswordChar = '\0';
-            txtTenDangNhap.PlaceholderText = "";
-            txtTenDangNhap.SelectedText = "";
-            txtTenDangNhap.SelectionStart = 13;
-            txtTenDangNhap.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            txtTenDangNhap.Size = new Size(200, 36);
-            txtTenDangNhap.TabIndex = 0;
+            tenDangNhapTextBox.AccessibleName = "";
+            tenDangNhapTextBox.CustomizableEdges = customizableEdges8;
+            tenDangNhapTextBox.DefaultText = "";
+            tenDangNhapTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            tenDangNhapTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            tenDangNhapTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            tenDangNhapTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            tenDangNhapTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            tenDangNhapTextBox.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            tenDangNhapTextBox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            tenDangNhapTextBox.Location = new Point(695, 220);
+            tenDangNhapTextBox.Name = "tenDangNhapTextBox";
+            tenDangNhapTextBox.PasswordChar = '\0';
+            tenDangNhapTextBox.PlaceholderText = "Tên đăng nhập";
+            tenDangNhapTextBox.SelectedText = "";
+            tenDangNhapTextBox.ShadowDecoration.CustomizableEdges = customizableEdges9;
+            tenDangNhapTextBox.Size = new Size(200, 36);
+            tenDangNhapTextBox.TabIndex = 0;
             // 
-            // txtMatKhau
+            // matKhauTextBox
             // 
-            txtMatKhau.CustomizableEdges = customizableEdges3;
-            txtMatKhau.DefaultText = "Mật khẩu";
-            txtMatKhau.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtMatKhau.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtMatKhau.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtMatKhau.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtMatKhau.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtMatKhau.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            txtMatKhau.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtMatKhau.Location = new Point(695, 281);
-            txtMatKhau.Name = "txtMatKhau";
-            txtMatKhau.PasswordChar = '\0';
-            txtMatKhau.PlaceholderText = "";
-            txtMatKhau.SelectedText = "";
-            txtMatKhau.SelectionStart = 8;
-            txtMatKhau.ShadowDecoration.CustomizableEdges = customizableEdges4;
-            txtMatKhau.Size = new Size(200, 36);
-            txtMatKhau.TabIndex = 1;
+            matKhauTextBox.CustomizableEdges = customizableEdges10;
+            matKhauTextBox.DefaultText = "";
+            matKhauTextBox.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            matKhauTextBox.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            matKhauTextBox.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            matKhauTextBox.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            matKhauTextBox.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            matKhauTextBox.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            matKhauTextBox.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            matKhauTextBox.Location = new Point(695, 281);
+            matKhauTextBox.Name = "matKhauTextBox";
+            matKhauTextBox.PasswordChar = '●';
+            matKhauTextBox.PlaceholderText = "Mật khẩu";
+            matKhauTextBox.SelectedText = "";
+            matKhauTextBox.ShadowDecoration.CustomizableEdges = customizableEdges11;
+            matKhauTextBox.Size = new Size(200, 36);
+            matKhauTextBox.TabIndex = 1;
+            matKhauTextBox.UseSystemPasswordChar = true;
             // 
             // guna2CirclePictureBox1
             // 
             guna2CirclePictureBox1.ImageRotate = 0F;
             guna2CirclePictureBox1.Location = new Point(62, 97);
             guna2CirclePictureBox1.Name = "guna2CirclePictureBox1";
-            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges5;
+            guna2CirclePictureBox1.ShadowDecoration.CustomizableEdges = customizableEdges12;
             guna2CirclePictureBox1.ShadowDecoration.Mode = Guna.UI2.WinForms.Enums.ShadowMode.Circle;
             guna2CirclePictureBox1.Size = new Size(400, 400);
             guna2CirclePictureBox1.TabIndex = 2;
             guna2CirclePictureBox1.TabStop = false;
             // 
-            // guna2Button1
+            // dangNhapButton
             // 
-            guna2Button1.CustomizableEdges = customizableEdges6;
-            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
-            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
-            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
-            guna2Button1.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
-            guna2Button1.ForeColor = Color.White;
-            guna2Button1.Location = new Point(695, 341);
-            guna2Button1.Name = "guna2Button1";
-            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges7;
-            guna2Button1.Size = new Size(200, 45);
-            guna2Button1.TabIndex = 3;
-            guna2Button1.Text = "Đăng nhập";
-            guna2Button1.Click += guna2Button1_Click;
+            dangNhapButton.CustomizableEdges = customizableEdges13;
+            dangNhapButton.DisabledState.BorderColor = Color.DarkGray;
+            dangNhapButton.DisabledState.CustomBorderColor = Color.DarkGray;
+            dangNhapButton.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            dangNhapButton.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            dangNhapButton.Font = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
+            dangNhapButton.ForeColor = Color.White;
+            dangNhapButton.Location = new Point(695, 341);
+            dangNhapButton.Name = "dangNhapButton";
+            dangNhapButton.ShadowDecoration.CustomizableEdges = customizableEdges14;
+            dangNhapButton.Size = new Size(200, 45);
+            dangNhapButton.TabIndex = 3;
+            dangNhapButton.Text = "Đăng nhập";
+            dangNhapButton.Click += dangNhapButton_Click;
             // 
             // iconButton2
             // 
             iconButton2.BackColor = Color.FromArgb(255, 94, 132);
             iconButton2.FlatAppearance.BorderSize = 0;
             iconButton2.FlatStyle = FlatStyle.Flat;
-            iconButton2.Font = new Font("Roboto", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            iconButton2.Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             iconButton2.IconChar = FontAwesome.Sharp.IconChar.Xmark;
             iconButton2.IconColor = Color.White;
             iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -128,20 +128,19 @@
             iconButton2.Size = new Size(45, 25);
             iconButton2.TabIndex = 4;
             iconButton2.UseVisualStyleBackColor = false;
-            iconButton2.Click += iconButton2_Click;
             // 
             // DangNhapForm
             // 
-            AutoScaleDimensions = new SizeF(11F, 23F);
+            AutoScaleDimensions = new SizeF(17F, 33F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(223, 243, 252);
             ClientSize = new Size(1109, 652);
             Controls.Add(iconButton2);
-            Controls.Add(guna2Button1);
+            Controls.Add(dangNhapButton);
             Controls.Add(guna2CirclePictureBox1);
-            Controls.Add(txtMatKhau);
-            Controls.Add(txtTenDangNhap);
-            Font = new Font("Roboto", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            Controls.Add(matKhauTextBox);
+            Controls.Add(tenDangNhapTextBox);
+            Font = new Font("Microsoft Sans Serif", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(5);
             Name = "DangNhapForm";
@@ -152,10 +151,10 @@
 
         #endregion
 
-        private Guna.UI2.WinForms.Guna2TextBox txtTenDangNhap;
-        private Guna.UI2.WinForms.Guna2TextBox txtMatKhau;
+        private Guna.UI2.WinForms.Guna2TextBox tenDangNhapTextBox;
+        private Guna.UI2.WinForms.Guna2TextBox matKhauTextBox;
         private Guna.UI2.WinForms.Guna2CirclePictureBox guna2CirclePictureBox1;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2Button dangNhapButton;
         private FontAwesome.Sharp.IconButton iconButton2;
     }
 }

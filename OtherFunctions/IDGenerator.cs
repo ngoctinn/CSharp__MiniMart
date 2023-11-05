@@ -1,4 +1,5 @@
-﻿using System;
+﻿using C__Final_Project_MiniMart.BUS;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,7 +13,9 @@ namespace OtherFunctions
 
         public void GenerateLoaiSanPhamID() 
         { 
-            
+            LoaiSanPhamBUS loaiSanPhamBUS = new LoaiSanPhamBUS();
+
+            int count = loaiSanPhamBUS.DemSoLoaiSanPham();
         }
     }
 }

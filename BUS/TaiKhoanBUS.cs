@@ -19,23 +19,21 @@ namespace C__Final_Project_MiniMart.BUS
 
         public List<TaiKhoan> LayDanhSachTaiKhoan()
         {
-            List<TaiKhoan> listTaiKhoan = taiKhoanDAO.LayDanhSachTaiKhoan();
-            return listTaiKhoan;
+            return taiKhoanDAO.LayDanhSachTaiKhoan();
         }
 
         //Tìm kiếm tài khoản bằng tên tài khoản
         public List<TaiKhoan> TimTaiKhoanBangTenTaiKhoan(string tenTaiKhoan)
         {
             tenTaiKhoan = tenTaiKhoan.Trim().ToLower();
-            List<TaiKhoan> listTaiKhoan = taiKhoanDAO.TimTaiKhoanBangTenTaiKhoan(tenTaiKhoan);
-            return listTaiKhoan;
+
+            return taiKhoanDAO.TimTaiKhoanBangTenTaiKhoan(tenTaiKhoan);
         }
 
         //Tìm kiếm tài khoản bằng mã phân quyền
         public List<TaiKhoan> TimTaiKhoanBangMaPhanQuyen (string maPhanQuyen) 
         {
-            List<TaiKhoan> listTaiKhoan = taiKhoanDAO.TimTaiKhoanBangMaPhanQuyen(maPhanQuyen); 
-            return listTaiKhoan;
+            return taiKhoanDAO.TimTaiKhoanBangMaPhanQuyen(maPhanQuyen);
         }
 
         //Kiểm tra đăng nhập

@@ -32,15 +32,29 @@ namespace C__Final_Project_MiniMart.DAO
             return listLoaiSanPham;
         }
 
-        public LoaiSanPham LayLoaiSanPhamTheoTenLoaiSanPham()
+        public LoaiSanPham LayLoaiSanPhamTheoTen(string tenLoaiSanPham)
         {
             LoaiSanPham loaiSanPham = new LoaiSanPham();
 
-            string query = "SELECT * FROM LoaiSanPham WHERE trangThai = 1;";
+            string query = $"SELECT * FROM LoaiSanPham WHERE trangThai = 1 AND tenLoaiSanPham = '{tenLoaiSanPham}';";
 
             DataTable dataTable = DbHelper.ExecuteQuery(query);
 
+            loaiSanPham.maLoaiSanPham = dataTable.Rows[0]["maLoaiSanPham"].ToString();
+            loaiSanPham.tenLoaiSanPham = dataTable.Rows[0]["tenLoaiSanPham"].ToString();
+
             return loaiSanPham;
+        }
+
+        public int DemSoLoaiSanPham()
+        {
+            string query = "SELECT COUNT(*) AS SoLoaiSanPham FROM LoaiSanPham;";
+
+            DataTable dataTable = DbHelper.ExecuteQuery(query);
+
+            int count = (int)dataTable.Rows[0]["SoLoaiSanPham"];
+
+            return count;
         }
     }
 }

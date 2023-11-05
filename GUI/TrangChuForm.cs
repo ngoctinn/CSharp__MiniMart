@@ -12,12 +12,13 @@ namespace GUI
 {
     public partial class TrangChuForm : Form
     {
+        private string tenDangNhap;
         //Fields
         private int borderSize = 2;
         private Size formSize; //Keep form size when it is minimized and restored.Since the form is resized because it takes into account the size of the title bar and borders.
-        public TrangChuForm()
+        public TrangChuForm(string tenDangNhap)
         {
-            
+            this.tenDangNhap = tenDangNhap;
             InitializeComponent();
             CenterToScreen();
             this.Padding = new Padding(borderSize);//Border size
