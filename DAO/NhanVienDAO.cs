@@ -81,72 +81,23 @@ namespace C__Final_Project_MiniMart.DAO
             return rowsAffected > 0;
         }
 
-        public List<NhanVien> LocNhanVienTheoPhanQuyen(string maPhanQuyen)
+        public List<NhanVien> TimKiemNhanVien(string keyword, string phanQuyen, string gioiTinh)
         {
+
             List<NhanVien> listNhanVien = new List<NhanVien>();
 
-            string query = "SELECT NV.* FROM NhanVien AS NV " +
-                           "JOIN TaiKhoan AS TK ON NV.tenTaiKhoan = TK.tenTaiKhoan " +
-                           "JOIN PhanQuyen AS PQ ON TK.maPhanQuyen = PQ.maPhanQuyen " +
-                           $"WHERE PQ.maPhanQuyen = '{maPhanQuyen}' and NV.trangThai = 1;";
+            string query = $"SELECT NV.* " +
+                           $"FROM NhanVien NV " +
+                           $"JOIN TaiKhoan TK ON NV.tenTaiKhoan = TK.tenTaiKhoan " +
+                           $"JOIN PhanQuyen PQ ON TK.maPhanQuyen = PQ.maPhanQuyen " +
+                           $"WHERE (LOWER(NV.tenNhanVien) LIKE '%{keyword}%' OR LOWER(NV.soDienThoai) LIKE '%{keyword}%' OR LOWER(NV.email) LIKE '%{keyword}%' OR LOWER(NV.diaChi) LIKE '%{keyword}%') " +
+                           $"AND NV.trangThai = 1";
 
-            DataTable dataTable = DbHelper.ExecuteQuery(query);
+            if (!phanQuyen.Equals("Mặc định") && !string.IsNullOrEmpty(phanQuyen))
+                query += $" AND NV.phanQuyen = '{phanQuyen}'";
 
-            foreach (DataRow row in dataTable.Rows)
-            {
-                NhanVien nhanVien = new NhanVien();
-
-                nhanVien.maNhanVien = row["maNhanVien"].ToString();
-                nhanVien.tenTaiKhoan = row["tenTaiKhoan"].ToString();
-                nhanVien.hoTen = row["hoTen"].ToString();
-                nhanVien.gioiTinh = row["gioiTinh"].ToString();
-                nhanVien.ngaySinh = (DateTime)row["ngaySinh"];
-                nhanVien.soDienThoai = row["soDienThoai"].ToString();
-                nhanVien.email = row["email"].ToString();
-                nhanVien.diaChi = row["diaChi"].ToString();
-
-                listNhanVien.Add(nhanVien);
-            }
-
-            return listNhanVien;
-        }
-
-        public List<NhanVien> LocNhanVienTheoGioiTinh(string gioiTinh)
-        {
-            List<NhanVien> listNhanVien = new List<NhanVien>();
-
-            string query = $"SELECT * FROM NhanVien WHERE gioiTinh = '{gioiTinh}';";
-
-            DataTable dataTable = DbHelper.ExecuteQuery(query);
-
-            foreach (DataRow row in dataTable.Rows)
-            {
-                NhanVien nhanVien = new NhanVien();
-
-                nhanVien.maNhanVien = row["maNhanVien"].ToString();
-                nhanVien.tenTaiKhoan = row["tenTaiKhoan"].ToString();
-                nhanVien.hoTen = row["hoTen"].ToString();
-                nhanVien.gioiTinh = row["gioiTinh"].ToString();
-                nhanVien.ngaySinh = (DateTime)row["ngaySinh"];
-                nhanVien.soDienThoai = row["soDienThoai"].ToString();
-                nhanVien.email = row["email"].ToString();
-                nhanVien.diaChi = row["diaChi"].ToString();
-
-                listNhanVien.Add(nhanVien);
-            }
-
-            return listNhanVien;
-        }
-
-        public List<NhanVien> TimKiemNhanVien(string keyword)
-        {
-            List<NhanVien> listNhanVien = new List<NhanVien>();
-
-            string query = $"SELECT * FROM NhanVien WHERE LOWER(tenNhanVien) LIKE '%{keyword}%' " +
-                           $"OR soDienThoai LIKE '%{keyword}%' " +
-                           $"OR LOWER(email) LIKE '%{keyword}%' " +
-                           $"OR LOWER(diaChi) LIKE '%{keyword}%' " +
-                           $"AND trangThai = 1;";
+            if (!gioiTinh.Equals("Mặc định") && !string.IsNullOrEmpty(gioiTinh))
+                query += $" AND NV.gioiTinh = '{gioiTinh}'";
 
             DataTable dataTable = DbHelper.ExecuteQuery(query);
 

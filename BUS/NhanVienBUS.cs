@@ -1,5 +1,6 @@
 ﻿using C__Final_Project_MiniMart.DAO;
 using C__Final_Project_MiniMart.DTO;
+using OtherFunctions;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -97,21 +98,11 @@ namespace C__Final_Project_MiniMart.BUS
                 return "Sửa thông tin nhân viên thất bại!";
         }
 
-        public List<NhanVien> LocNhanVienTheoPhanQuyen(string maPhanQuyen)
-        {
-            return nhanVienDAO.LocNhanVienTheoPhanQuyen(maPhanQuyen);
-        }
-
-        public List<NhanVien> LocNhanVienTheoGioiTinh(string gioiTinh)
-        {
-            return nhanVienDAO.LocNhanVienTheoGioiTinh(gioiTinh);
-        }
-
-        public List<NhanVien> TimKiemNhanVien(string keyword) 
+        public List<NhanVien> TimKiemNhanVien(string keyword, string phanQuyen = "Mặc định", string gioiTinh = "Mặc định") 
         {
             keyword = keyword.Trim().ToLower();
 
-            return nhanVienDAO.TimKiemNhanVien(keyword);
+            return nhanVienDAO.TimKiemNhanVien(keyword, phanQuyen, gioiTinh);
         }
     }
 }

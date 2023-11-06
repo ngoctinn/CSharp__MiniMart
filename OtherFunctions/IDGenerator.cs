@@ -1,4 +1,5 @@
-﻿using C__Final_Project_MiniMart.BUS;
+﻿
+using C__Final_Project_MiniMart.BUS;
 using C__Final_Project_MiniMart.DAO;
 using System;
 using System.Collections.Generic;
@@ -47,7 +48,7 @@ namespace OtherFunctions
             if (tenPhanQuyen.Equals("Nhân viên bán hàng"))
             {
                 int count = nhanVienDAO.DemSoNhanVien(tenPhanQuyen);
-                
+
                 nhanVienID = string.Format("NBH{0:D3}", ++count);
             }
 
