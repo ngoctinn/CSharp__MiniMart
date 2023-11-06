@@ -45,7 +45,7 @@ namespace C__Final_Project_MiniMart.DAO
 
             return loaiSanPham;
         }
-
+      
         public int DemSoLoaiSanPham()
         {
             string query = "SELECT COUNT(*) AS SoLoaiSanPham FROM LoaiSanPham;";
