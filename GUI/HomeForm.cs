@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using 
 
 namespace C__Final_Project_MiniMart
 {
@@ -16,7 +15,6 @@ namespace C__Final_Project_MiniMart
         public HomeForm()
         {
             InitializeComponent();
-            TaiKhoanBUS 
         }
     }
 }

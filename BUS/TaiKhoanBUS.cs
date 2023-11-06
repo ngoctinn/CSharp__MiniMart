@@ -23,17 +23,17 @@ namespace C__Final_Project_MiniMart.BUS
         }
 
         //Tìm kiếm tài khoản bằng tên tài khoản
-        public List<TaiKhoan> TimTaiKhoanBangTenTaiKhoan(string tenTaiKhoan)
+        public List<TaiKhoan> TimKiemTheoTen(string tenTaiKhoan)
         {
             tenTaiKhoan = tenTaiKhoan.Trim().ToLower();
 
-            return taiKhoanDAO.TimTaiKhoanBangTenTaiKhoan(tenTaiKhoan);
+            return taiKhoanDAO.TimKiemTheoTen(tenTaiKhoan);
         }
 
         //Tìm kiếm tài khoản bằng mã phân quyền
         public List<TaiKhoan> TimTaiKhoanBangMaPhanQuyen (string maPhanQuyen) 
         {
-            return taiKhoanDAO.TimTaiKhoanBangMaPhanQuyen(maPhanQuyen);
+            return taiKhoanDAO.TimTheoMaPhanQuyen(maPhanQuyen);
         }
 
         //Kiểm tra đăng nhập
@@ -56,10 +56,13 @@ namespace C__Final_Project_MiniMart.BUS
             if (string.IsNullOrEmpty(tenTaiKhoan) || string.IsNullOrEmpty(matKhau))
                 return "Vui lòng nhập đầy đủ thông tin!";
 
-            if (taiKhoanDAO.KiemTraTaiKhoanDaTonTai(tenTaiKhoan))
+            if (taiKhoanDAO.KiemTraDaTonTai(tenTaiKhoan))
                 return "Tên tài khoản đã tồn tại, vui lòng chọn tên khác!";
             else 
             {
+                tenTaiKhoan = tenTaiKhoan.Trim();
+                matKhau = matKhau.Trim();
+
                 TaiKhoan taiKhoan = new TaiKhoan(maPhanQuyen, tenTaiKhoan, matKhau);
 
                 if (taiKhoanDAO.ThemTaiKhoan(taiKhoan))
@@ -83,6 +86,8 @@ namespace C__Final_Project_MiniMart.BUS
 
             if (matKhauCu.Equals(matKhauMoi))
                 return "Mật khẩu mới giống với mật khẩu cũ!";
+
+            matKhauMoi = matKhauMoi.Trim();
 
             if (taiKhoanDAO.DoiMatKhau(tenTaiKhoan, matKhauMoi))
                 return "Đổi mật khẩu thành công!";

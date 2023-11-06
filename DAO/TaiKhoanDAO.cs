@@ -35,7 +35,7 @@ namespace C__Final_Project_MiniMart.DAO
         }
 
         //Tìm kiếm tài khoản bằng tên tài khoản
-        public List<TaiKhoan> TimTaiKhoanBangTenTaiKhoan(string tenTaiKhoan)
+        public List<TaiKhoan> TimKiemTheoTen(string tenTaiKhoan)
         {
             List<TaiKhoan> listTaiKhoan = new List<TaiKhoan>();
 
@@ -57,7 +57,7 @@ namespace C__Final_Project_MiniMart.DAO
         }
 
         //Tìm kiếm tài khoản bằng mã phân quyền
-        public List<TaiKhoan> TimTaiKhoanBangMaPhanQuyen(string maPhanQuyen)
+        public List<TaiKhoan> TimTheoMaPhanQuyen(string maPhanQuyen)
         {
             List<TaiKhoan> listTaiKhoan = new List<TaiKhoan>();
 
@@ -90,7 +90,7 @@ namespace C__Final_Project_MiniMart.DAO
         }
 
         //Kiểm tra tài khoản đã tồn tại
-        public bool KiemTraTaiKhoanDaTonTai(string tenTaiKhoan)
+        public bool KiemTraDaTonTai(string tenTaiKhoan)
         {
             string query = $"SELECT tenTaiKhoan FROM TaiKhoan WHERE tenTaiKhoan = '{tenTaiKhoan}';";
 
@@ -126,6 +126,32 @@ namespace C__Final_Project_MiniMart.DAO
             int rowsAffected = DbHelper.ExecuteNonQuery(query);
 
             return rowsAffected > 0;
+        }
+
+        public List<TaiKhoan> LayDanhSachTaiKhoanChuaDung()
+        {
+            List<TaiKhoan> listTaiKhoan = new List<TaiKhoan>();
+
+            string query = "SELECT TK.* " +
+                           "FROM TaiKhoan AS TK " +
+                           "LEFT JOIN NhanVien AS NV ON TK.tenTaiKhoan = NV.tenTaiKhoan " +
+                           "WHERE NV.tenTaiKhoan IS NULL " +
+                           "AND TK.trangThai = 1;";
+
+            DataTable dataTable = DbHelper.ExecuteQuery(query);
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                TaiKhoan taiKhoan = new TaiKhoan();
+                taiKhoan.maPhanQuyen = row["maPhanQuyen"].ToString();
+                taiKhoan.tenTaiKhoan = row["tenTaiKhoan"].ToString();
+                taiKhoan.matKhau = row["matKhau"].ToString();
+                taiKhoan.trangThai = (bool)row["trangThai"];
+
+                listTaiKhoan.Add(taiKhoan);
+            }
+
+            return listTaiKhoan;
         }
     }
 }
