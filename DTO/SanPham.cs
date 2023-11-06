@@ -26,6 +26,18 @@ namespace C__Final_Project_MiniMart.DTO
             trangThai = true;
         }
 
+        public SanPham(string maSanPham, string maLoaiSanPham, string maNhaCungCap, string tenSanPham, string donViTinh, decimal giaBan, string duongDanAnh)
+        {
+            this.maSanPham = maSanPham;
+            this.maLoaiSanPham = maLoaiSanPham;
+            this.maNhaCungCap = maNhaCungCap;
+            this.tenSanPham = tenSanPham;
+            this.donViTinh = donViTinh;
+            this.giaBan = giaBan;
+            this.duongDanAnh = duongDanAnh;
+            trangThai = true;
+        }
+
         public string maSanPham {  get; set; }
         public string maLoaiSanPham { get; set; }
         public string maNhaCungCap { get; set; }

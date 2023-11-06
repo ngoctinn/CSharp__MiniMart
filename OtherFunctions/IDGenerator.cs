@@ -61,5 +61,16 @@ namespace OtherFunctions
 
             return nhanVienID;
         }
+
+        public static string GenerateSanPhamID()
+        {
+            SanPhamDAO sanPhamDAO = new SanPhamDAO();
+
+            int count = sanPhamDAO.DemSoSanPham();
+
+            string sanPhamID = string.Format("SP{0:D4}", ++count); ;
+
+            return sanPhamID;
+        }
     }
 }

@@ -18,6 +18,16 @@ namespace C__Final_Project_MiniMart.BUS
             nhaCungCapDAO = new NhaCungCapDAO();
         }
 
+        public List<NhaCungCap> LayDanhSachNhaCungCap()
+        {
+            return nhaCungCapDAO.LayDanhSachNhaCungCap();
+        }
+
+        public NhaCungCap LayNhaCungCapTheoTen(string tenNhaCungCap)
+        {
+            return nhaCungCapDAO.LayNhaCungCapTheoTen(tenNhaCungCap);
+        }
+
         public int DemSoNhaCungCap()
         {
             return nhaCungCapDAO.DemSoNhaCungCap();

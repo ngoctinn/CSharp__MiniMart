@@ -35,6 +35,23 @@ namespace C__Final_Project_MiniMart.DAO
             return listNhaCungCap;
         }
 
+        public NhaCungCap LayNhaCungCapTheoTen(string tenNhaCungCap)
+        {
+            NhaCungCap nhaCungCap = new NhaCungCap();
+
+            string query = $"SELECT * FROM NhaCungCap WHERE tenNhaCungCap = '{tenNhaCungCap}';";
+
+            DataTable dataTable = DbHelper.ExecuteQuery(query);
+
+            nhaCungCap.maNhaCungCap = dataTable.Rows[0]["maNhaCungCap"].ToString();
+            nhaCungCap.tenNhaCungCap = dataTable.Rows[0]["tenNhaCungCap"].ToString();
+            nhaCungCap.soDienThoai = dataTable.Rows[0]["soDienThoai"].ToString();
+            nhaCungCap.email = dataTable.Rows[0]["email"].ToString();
+            nhaCungCap.diaChi = dataTable.Rows[0]["diaChi"].ToString();
+
+            return nhaCungCap;
+        }
+
         public int DemSoNhaCungCap()
         {
             string query = "SELECT COUNT(*) AS SoNhaCungCap FROM NhaCungCap;";
