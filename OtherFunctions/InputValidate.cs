@@ -14,12 +14,12 @@ namespace OtherFunctions
     {
         public InputValidate() { }
 
-        /*static void Main(string[] args)
+        static void Main(string[] args)
         {
             Console.Write("Nhap ngay sinh: ");
             string birthday = Console.ReadLine();
             Console.WriteLine(BirthdayValidate(birthday));
-        }*/
+        }
 
         public static bool PhoneNumberValidate(string phoneNumber)
         {

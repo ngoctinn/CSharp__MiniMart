@@ -15,4 +15,10 @@
     <ProjectReference Include="..\DTO\DTO.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Reference Include="OtherFunctions">
+      <HintPath>..\OtherFunctions\obj\Debug\net6.0\OtherFunctions.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
 </Project>
