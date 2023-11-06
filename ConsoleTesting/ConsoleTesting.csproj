@@ -8,6 +8,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BUS\BUS.csproj" />
     <ProjectReference Include="..\OtherFunctions\OtherFunctions.csproj" />
   </ItemGroup>
 
