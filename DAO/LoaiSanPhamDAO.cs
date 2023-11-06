@@ -56,5 +56,62 @@ namespace C__Final_Project_MiniMart.DAO
 
             return count;
         }
+
+        public List<LoaiSanPham> TimKiemTheoTen(string tenLoaiSanPham)
+        {
+            List<LoaiSanPham> listLoaiSanPham = new List<LoaiSanPham>();
+
+            string query = $"SELECT * FROM LoaiSanPham WHERE LOWER(tenLoaiSanPham) LIKE '%{tenLoaiSanPham}%' AND trangThai = 1;";
+
+            DataTable dataTable = DbHelper.ExecuteQuery(query);
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                LoaiSanPham LoaiSanPham = new LoaiSanPham();
+
+                LoaiSanPham.maLoaiSanPham = row["maLoaiSanPham"].ToString();
+                LoaiSanPham.tenLoaiSanPham = row["tenLoaiSanPham"].ToString();
+
+                listLoaiSanPham.Add(LoaiSanPham);
+            }
+
+            return listLoaiSanPham;
+        }
+
+        public bool ThemLoaiSanPham(LoaiSanPham loaiSanPham)
+        {
+            string query = $"INSERT INTO LoaiSanPham VALUES ('{loaiSanPham.maLoaiSanPham}', '{loaiSanPham.tenLoaiSanPham}', 1);";
+
+            int rowsAffected = DbHelper.ExecuteNonQuery(query);
+
+            return rowsAffected > 0;
+        }
+
+        public bool KiemTraDaTonTai(string tenLoaiSanPham)
+        {
+            string query = $"SELECT tenLoaiSanPham FROM LoaiSanPham WHERE LOWER(tenLoaiSanPham) = '{tenLoaiSanPham}';";
+
+            DataTable dataTable = DbHelper.ExecuteQuery(query);
+
+            return dataTable.Rows.Count > 0;
+        }
+
+        public bool XoaLoaiSanPham(string maLoaiSanPham)
+        {
+            string query = $"UPDATE LoaiSanPham SET trangThai = 0 WHERE maLoaiSanPham = '{maLoaiSanPham}';";
+
+            int rowsAffected = DbHelper.ExecuteNonQuery(query);
+
+            return rowsAffected > 0;
+        }
+
+        public bool ChinhSuaLoaiSanPham(LoaiSanPham loaiSanPham)
+        {
+            string query = $"UPDATE LoaiSanPham SET tenLoaiSanPham = '{loaiSanPham.tenLoaiSanPham}' WHERE maLoaiSanPham = '{loaiSanPham.maLoaiSanPham}';";
+
+            int rowsAffected = DbHelper.ExecuteNonQuery(query);
+
+            return rowsAffected > 0;
+        }
     }
 }

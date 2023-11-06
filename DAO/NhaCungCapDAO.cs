@@ -12,7 +12,7 @@ namespace C__Final_Project_MiniMart.DAO
     {
         public NhaCungCapDAO() { }
 
-        public List<NhaCungCap> GetAllNhaCungCap()
+        public List<NhaCungCap> LayDanhSachNhaCungCap()
         {
             List<NhaCungCap> listNhaCungCap = new List<NhaCungCap>();
 
@@ -29,6 +29,69 @@ namespace C__Final_Project_MiniMart.DAO
                 nhaCungCap.email = row["email"].ToString();
                 nhaCungCap.diaChi = row["diaChi"].ToString();
                 
+                listNhaCungCap.Add(nhaCungCap);
+            }
+
+            return listNhaCungCap;
+        }
+
+        public int DemSoNhaCungCap()
+        {
+            string query = "SELECT COUNT(*) AS SoNhaCungCap FROM NhaCungCap;";
+
+            DataTable dataTable = DbHelper.ExecuteQuery(query);
+
+            int count = (int)dataTable.Rows[0]["SoNhaCungCap"];
+
+            return count;
+        }
+
+        public bool ThemNhaCungCap(NhaCungCap nhaCungCap)
+        {
+            string query = $"INSERT INTO NhaCungCap VALUES ('{nhaCungCap.maNhaCungCap}', '{nhaCungCap.tenNhaCungCap}', '{nhaCungCap.soDienThoai}', '{nhaCungCap.email}', '{nhaCungCap.diaChi}');";
+
+            int rowsAffected = DbHelper.ExecuteNonQuery(query);
+
+            return rowsAffected > 0;
+        }
+
+        public bool KiemTraDaTonTai(string tenNhaCungCap)
+        {
+            string query = $"SELECT tenNhaCungCap FROM NhaCungCap WHERE LOWER(tenNhaCungCap) = '{tenNhaCungCap}';";
+
+            DataTable dataTable = DbHelper.ExecuteQuery(query);
+
+            return dataTable.Rows.Count > 0;
+        }
+
+        public bool SuaNhaCungCap(NhaCungCap nhaCungCap)
+        {
+            string query = $"UPDATE NhaCungCap SET tenNhaCungCap = '{nhaCungCap.tenNhaCungCap}', soDienThoai = '{nhaCungCap.soDienThoai}', email = '{nhaCungCap.email}', diaChi = '{nhaCungCap.diaChi}' WHERE maNhaCungCap = '{nhaCungCap.maNhaCungCap}';";
+
+            int rowsAffected = DbHelper.ExecuteNonQuery(query);
+
+            return rowsAffected > 0;
+        }
+
+        public List<NhaCungCap> TimKiemNhaCungCap(string keyword)
+        {
+            List<NhaCungCap> listNhaCungCap = new List<NhaCungCap>();
+
+            string query = $"SELECT * FROM NhaCungCap WHERE LOWER(tenNhaCungCap) LIKE '%{keyword}%' " +
+                $"OR soDienThoai LIKE '%{keyword}%' OR LOWER(email) LIKE '%{keyword}%' OR LOWER(diaChi) LIKE '%{keyword}%';";
+
+            DataTable dataTable = DbHelper.ExecuteQuery(query);
+
+            foreach (DataRow row in dataTable.Rows)
+            {
+                NhaCungCap nhaCungCap = new NhaCungCap();
+
+                nhaCungCap.maNhaCungCap = row["maNhaCungCap"].ToString();
+                nhaCungCap.tenNhaCungCap = row["tenNhaCungCap"].ToString();
+                nhaCungCap.soDienThoai = row["soDienThoai"].ToString();
+                nhaCungCap.email = row["email"].ToString();
+                nhaCungCap.diaChi = row["diaChi"].ToString();
+
                 listNhaCungCap.Add(nhaCungCap);
             }
 
